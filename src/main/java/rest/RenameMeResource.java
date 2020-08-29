@@ -1,7 +1,7 @@
 package rest;
 
-import entities.RenameMe;
-import facades.FacadeExample;
+import entities.Employee;
+import facades.EmployeeFacade;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.ws.rs.Consumes;
@@ -19,7 +19,7 @@ public class RenameMeResource {
     
     //NOTE: Change Persistence unit name according to your setup
     static EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu"); 
-    FacadeExample facade =  FacadeExample.getFacadeExample(emf);
+    EmployeeFacade facade =  EmployeeFacade.getFacadeExample(emf);
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
@@ -29,14 +29,14 @@ public class RenameMeResource {
 
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
-    public void create(RenameMe entity) {
+    public void create(Employee entity) {
         throw new UnsupportedOperationException();
     }
     
     @PUT
     @Path("/{id}")
     @Consumes({MediaType.APPLICATION_JSON})
-    public void update(RenameMe entity, @PathParam("id") int id) {
+    public void update(Employee entity, @PathParam("id") int id) {
         throw new UnsupportedOperationException();
     }
 }
